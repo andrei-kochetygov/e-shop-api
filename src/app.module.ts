@@ -1,7 +1,8 @@
+import { PrismaModule } from 'nestjs-prisma';
 import { Module } from '@nestjs/common';
 
 @Module({
-  imports: [],
+  imports: [PrismaModule.forRoot({ isGlobal: true })],
   controllers: [],
   providers: [],
 })
