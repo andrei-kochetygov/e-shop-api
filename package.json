@@ -9,6 +9,7 @@
     "db:build:dev": "prisma generate --schema=./src/database/schema.prisma --watch",
     "db:migrate": "prisma migrate dev --schema=./src/database/schema.prisma",
     "db:browse": "prisma studio",
+    "api:command": "ts-node --project src/api/cli",
     "api:build": "rimraf dist && nest build",
     "api:start:dev": "nest start --watch",
     "api:start:prod": "node build/main"
@@ -18,6 +19,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@prisma/client": "^4.9.0",
+    "nest-commander": "^3.4.0",
     "nestjs-prisma": "^0.20.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -37,7 +39,7 @@
     "prisma": "^4.9.0",
     "source-map-support": "^0.5.20",
     "ts-loader": "^9.2.3",
-    "ts-node": "^10.0.0",
+    "ts-node": "^10.9.1",
     "tsconfig-paths": "4.1.0",
     "typescript": "^4.7.4"
   }
