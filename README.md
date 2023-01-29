@@ -1,15 +1,12 @@
-## Installation
+# Installation
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+# Running the app
 
 ```bash
-# development
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ npm run build
+$ npm run start
 ```

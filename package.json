@@ -2,16 +2,23 @@
   "name": "e-shop-api",
   "version": "0.0.1",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\"",
-    "start:dev": "nest start --watch",
-    "start:prod": "node dist/main"
+    "build": "npm run db:build && npm run db:migrate && api:build",
+    "start": "npm run api:start:prod",
+    "db:build": "prisma generate --schema=./src/database/schema.prisma",
+    "db:build:dev": "prisma generate --schema=./src/database/schema.prisma --watch",
+    "db:migrate": "prisma migrate dev --schema=./src/database/schema.prisma",
+    "db:browse": "prisma studio",
+    "api:build": "rimraf dist && nest build",
+    "api:start:dev": "nest start --watch",
+    "api:start:prod": "node build/main"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@prisma/client": "^4.9.0",
+    "nestjs-prisma": "^0.20.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
@@ -27,6 +34,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.3.2",
+    "prisma": "^4.9.0",
     "source-map-support": "^0.5.20",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
