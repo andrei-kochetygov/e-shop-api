@@ -1,6 +1,7 @@
 # Installation
 
 ```bash
+$ git clone https://github.com/andrei-kochetygov/e-shop-api.git
 $ yarn install
 ```
 
