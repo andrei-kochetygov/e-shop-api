@@ -1,12 +1,18 @@
 # Installation
 
 ```bash
-$ npm install
+$ yarn install
+```
+
+# Initial configuration
+
+```bash
+$ yarn run init
+$ yarn run api:command create-user
 ```
 
 # Running the app
 
 ```bash
-$ npm run build
-$ npm run start
+$ yarn run start
 ```
